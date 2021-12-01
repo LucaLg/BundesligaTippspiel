@@ -1,6 +1,6 @@
 [submodule "tippspielFrontend"]
 	path = tippspielFrontend
-	url = ./tippspielFrontend/
+	url = https://github.com/LucaLg/TippspielFrontend
 [submodule "tippspielApp"]
 	path = tippspielApp
-	url = ./tippspielApp/
+	url = https://github.com/LucaLg/TippspielApp
