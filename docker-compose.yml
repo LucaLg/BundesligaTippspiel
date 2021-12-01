@@ -1,0 +1,34 @@
+version: '3.1'
+services:
+  app:
+    container_name: app
+    image: 'tippspielapp'
+    build: ./tippspielApp/
+    ports:
+    - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/TippspielDB
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=post
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  db:
+    image: postgres
+    container_name: db
+    ports:
+    - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=post
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=TippspielDB
+  tippspielfrontend:
+      build:
+        ./tippspielFrontend/
+      links:
+      - "app"
+      depends_on:
+        - "app"
+      ports:
+        - "80:80"
+

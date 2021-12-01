@@ -1,0 +1,6 @@
+[submodule "tippspielFrontend"]
+	path = tippspielFrontend
+	url = ./tippspielFrontend/
+[submodule "tippspielApp"]
+	path = tippspielApp
+	url = ./tippspielApp/
